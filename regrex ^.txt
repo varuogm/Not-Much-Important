@@ -1,0 +1,15 @@
+query- doesnt start with any vowel
+answer-
+ SELECT DISTINCT CITY FROM STATION 
+ WHERE CITY REGEXP '^[^aeiou]';
+
+
+(gourav - in this the inner one is for negation and outer for the search with the beginning letter)
+
+
+The first ^ is to make it match the beginning of the String.
+The second ^ is negation. You need both to work.
+
+If you just did [^aeiou] it would be strings without aeiou. 
+You need the extra ^ in ^[^aeiou] to make sure to match 
+strings that dont BEGIN with aeiou.
