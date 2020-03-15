@@ -13,6 +13,9 @@ filter_none
 edit
 play_arrow
 
+**************************************************************
+             A*B = gcd(A,B) * lcm(A,B)
+*************************************************************
 
 // CPP program to illustrate 
 // gcd function of C++ STL 
