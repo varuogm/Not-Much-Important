@@ -3,6 +3,8 @@
 	int arr[8]={10 ,11 ,12 ,13, 14, 15, 16, 17};
 	reverse(arr,arr+8);
 
+
+
           ***Reverse a string****
 -----------------------------------------------------------
 	
@@ -10,6 +12,9 @@
         string greeting = "Hello"; 
         reverse(greeting.begin(),greeting.end());
          cout<<greeting<<endl;
+	 
+	 
+	 
 
 
           ***Reverse a string by swapping indexes****
@@ -25,6 +30,9 @@
 
   }
   cout<<greeting<<endl;
+  
+  
+  
 
  ***Reverse a string by swapping indexes (WHILE LOOP) ****
 ----------------------------------------------------------------
@@ -43,6 +51,10 @@ int main()
   }
   cout<<greeting<<endl;
 }
+
+
+
+
 
  ***int to string ****
 ----------------------------------------------------------------
