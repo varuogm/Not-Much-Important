@@ -7,6 +7,7 @@ Table of content
 4)isPowerOfTwo function by / and checking
 5) by one liner expression bool
 6) Count the number of ones in the binary of number.
+7)print all possible subset of a set
 ---------------------------------------------------------
 
 
@@ -111,3 +112,62 @@ n = 23 = {10111}2 .
 5. As n-1 = 15 = {01111}2 , then n&(n-1) will be {10000}2 & {01111}2, which will be {00000}2 which is equal to 0. Therefore n will change to 0 and count to 4.
 6. As n = 0, the the loop will terminate and gives the result as 4.
 --------------------------------------------------------------------------------------------------------------
+
+7)
+
+C++ program to print all possible subset of a set
+
+void allPossibleSubset(int arr[],int n)
+{
+	int  count = pow(2,n);
+	for (int i = 0; i < count; i++)
+	{
+		// The inner for loop will run n times , As the maximum number of elements a set can have is n
+		// This loop will generate a subset
+		for (int j = 0; j < n; j++)
+		{
+			// This if condition will check if jth bit in binary representation of  i  is set or not
+			// if the value of (i & (1 << j)) is greater than 0 , include arr[j] in the current subset
+			// otherwise exclude arr[j]
+			if ((i & (1 << j)) > 0)
+				cout << arr[j] << " ";
+		}
+		cout << "\n";
+	}
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+    int arr[n];
+	for(int i=0;i<n;i++)
+		{
+		   cin >> arr[i];
+		}
+  allPossibleSubset(arr,n);
+  return 0;
+}
+**
+example-
+Enter size of the set
+4
+Enter Elements of the set
+1 2 3 4
+
+1
+2
+1 2
+3
+1 3
+2 3
+1 2 3
+4
+1 4
+2 4
+1 2 4
+3 4
+1 3 4
+2 3 4
+1 2 3 4
+-----------------------------------------------------
