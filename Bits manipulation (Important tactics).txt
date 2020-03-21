@@ -4,7 +4,7 @@ Table of content
 1)bitwise shift
 2)quickly check if a number is odd or even
 3)Direct XOR of all numbers from 1 to n 
-4)
+4)isPowerOfTwo
 ---------------------------------------------------------
 
 
@@ -60,3 +60,16 @@ int computeXOR(int n)
 Input: 6
 Output: 7
 ----------------------------
+
+4)
+check if thde number is power of 2
+bool isPowerOfTwo(int x)
+    {
+        if(x == 0)
+            return false;
+        else
+        {
+            while(x % 2 == 0) x /= 2;
+            return (x == 1);
+            }
+    }
