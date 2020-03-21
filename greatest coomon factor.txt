@@ -1,3 +1,11 @@
+Table of contents
+1)__gcd stl
+2)making a function
+
+
+-------------------------------------
+
+
 C++ inbuilt function for finding GCD
 
 In many competitive programming problems, we need to find greatest common divisor also known as gcd. Euclids algorithm to find gcd has been discussed here
@@ -16,15 +24,8 @@ play_arrow
 **************************************************************
              A*B = gcd(A,B) * lcm(A,B)
 *************************************************************
+1)
 
-// CPP program to illustrate 
-// gcd function of C++ STL 
-
-#include <iostream> 
-#include <algorithm>  
-  
-using namespace std; 
-  
 int main() 
 { 
     cout << "gcd(6, 20) = " << __gcd(6, 20) << endl; 
@@ -34,11 +35,9 @@ output;
 gcd(6, 20) = 2
 
 -----------------------------------
-by another method
---------------------------------
 
-#include <iostream> 
-using namespace std; 
+2)
+
 int gcd(int a, int b) 
 { 
 	if (b == 0) 
