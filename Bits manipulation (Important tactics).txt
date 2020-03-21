@@ -1,6 +1,14 @@
 Bits manipulation (Important tactics)
 
-**bitwise shift**
+Table of content
+1)bitwise shift
+2)quickly check if a number is odd or even
+3)Direct XOR of all numbers from 1 to n 
+4)
+---------------------------------------------------------
+
+
+1) **bitwise shift**
 
 #include <stdio.h> 
 
@@ -17,6 +25,8 @@ x << 1 = 38 x ko badhava mila
 x >> 1 = 9  x ko kheench liya
 ------------------------------------------
 
+2)
+
 **even odd**
 The & operator can be used to quickly check if a number is odd or even.
 
@@ -32,6 +42,7 @@ int main()
 Output:
 Odd
 
+3)
 *** Direct XOR of all numbers from 1 to n ***
  
 int computeXOR(int n) 
