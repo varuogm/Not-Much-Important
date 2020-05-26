@@ -1,0 +1,36 @@
+Given a string, S, consisting of alphabets and digits,
+find the frequency of each digit in the given string
+
+```
+//Frequency of digits
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    char a[1000];
+    int c,num[10] = {0};
+    cin>>a;
+    for(int i = 0 ;i <= strlen(a);i++)
+    {
+        if(isdigit(a[i]) > 0)
+        {
+            c = (a[i]) - '0';
+            num[c] += 1;
+        }
+    }
+    for(int i = 0; i<10;i++)
+    {
+        cout<<num[i]<<" ";
+    }
+    return 0;
+}
+```
+look first of all we have to check weather a[i] is a digit or not (using isdigit() we are doing this) after that, …suppose a[i] found to be a digit let say 9 but remember 9 is currently a string ‘9’ which is actually 57 in ascii, so we know that ‘0’ is 48 when we do c= (a[i])-‘0’
+that is actually c= 57-48 = 9 so we will increase value at the position 9 to have a record.
+
+INPUT-lw4n88j12n1
+OUTPUT- 0 2 1 0 1 0 0 0 2 0
+in this we got 4 once so a[4] = 1 and 8 twice so a[8] = 2
+
+hope it helped … whatsapp p mil ~hardik
