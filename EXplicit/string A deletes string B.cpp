@@ -30,7 +30,7 @@ int main()
 	for(int i=0;i<strr.length();i++)
 	{
 	 unordered_map<char, int> ::iterator it = M.find(strr[i]); 
-      if (it != M.end())
+      if (it != M.end())//this block checks the char strrr is in str or not if yes then it count-- else chalete raho
       M[strr[i]]--; 
 	}
 	
