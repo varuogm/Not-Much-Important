@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isBalanced(string str)
+{
+    stack<char> s;
+    for(int i = 0; i < str.length(); i++)
+    {
+        if(str[i] == '(' )
+            s.push(str[i]);
+        else
+        {
+            if(s.empty())
+                return 0;
+            s.pop();
+        }
+    }
+    if(!s.empty())
+        return 0;
+    return 1;
+}
+
+
+int main()
+{
+    string bracSeq = "(()";
+    cout << isBalanced(bracSeq);
+    return 0;
+}
