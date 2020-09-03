@@ -1,3 +1,24 @@
+code
+```
+class MyHashSet {
+public:
+    vector<bool> v;
+	MyHashSet() : v(1000000, false) {}//initilaze vector pos by Tor F
+	
+	void add(int key) {
+		v[key] = true;//haa bhai ek to hai to T rakhdo abhi
+	}
+	
+	void remove(int key) {//hata diya bro F karde
+		v[key] = false;
+	}
+	
+	bool contains(int key) {//us index ko rpint kara do 
+		return v[key];
+	}
+};
+```
+
 /*Design a HashSet without using any built-in hash table libraries.
 
 To be specific, your design should include these functions:
@@ -17,22 +38,5 @@ hashSet.add(2);
 hashSet.contains(2);    // returns true
 hashSet.remove(2);          
 hashSet.contains(2);    // returns false (already removed)*/
---------------------------------------------solution----------------------------------------------------
 
-class MyHashSet {
-public:
-    vector<bool> v;
-	MyHashSet() : v(1000000, false) {}//initilaze vector pos by Tor F
-	
-	void add(int key) {
-		v[key] = true;//haa bhai ek to hai to T rakhdo abhi
-	}
-	
-	void remove(int key) {//hata diya bro F karde
-		v[key] = false;
-	}
-	
-	bool contains(int key) {//us index ko rpint kara do 
-		return v[key];
-	}
-};
+
