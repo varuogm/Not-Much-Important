@@ -1,0 +1,46 @@
+class Solution
+{
+public:
+    int numSpecial(vector<vector<int>> &mat)
+    {
+        int rows = mat.size(), 
+        int col = mat[0].size();
+        int rsum[rows];
+        int csum[col];
+        int i, j;
+        //get sum of rows
+        for (i = 0; i < rows; i++)
+        {
+            rsum[i] = 0;
+            for (j = 0; j < col; j++)
+                rsum[i] += mat[i][j];
+        }
+        //get sum of coloumns
+        for (i = 0; i < col; i++)
+        {
+            csum[i] = 0;
+            for (j = 0; j < rows; j++)
+                csum[i] += mat[j][i];
+        }
+        //If value in mat is one with sum of that row and col =1 then add this to result
+        int count = 0;
+        for (i = 0; i < rows; i++)
+            for (j = 0; j < col; j++)
+                if (mat[i][j] == 1 && rsum[i] == 1 && csum[j] == 1)
+                    count++;
+        return count;
+    }
+};
+
+/*
+ This problem is very easy to think. Please do not go to code directly, take steps as hint and try to implement it yourself :)
+Steps:
+1. Get the sum of all the rows
+2. Get the sum of all the coloumns
+3. Traverse the matrix and whenever encounter 1 check its row and col sum, if 1 then increment count by 1.
+4. Return count.
+
+Complexity Analysis
+Time : O(m*n)
+Space: O(m+n+1)
+*/
