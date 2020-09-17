@@ -1,0 +1,39 @@
+// SSEC - Coding Contest-2 » Prime Game » All Submissions » sanjay3135 [37984710]
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int a,b,f=0;
+    cin>>a>>b;
+    int temp=a;
+    vector<int>v;
+    while(a<b)
+    {
+        f=0;
+        for(int i=2;i*i<=a;i++)
+        {
+           if(a%i==0){f=1;break;} 
+        }
+        if(f==0)
+        {
+            v.push_back(a);
+        }
+        a++;
+    }
+    int r1=temp*b,r2=(temp*b)/4;
+    for(int i=0;i<v.size()-1;i++)
+    {
+        for(int j=i+1;j<v.size();j++)
+       { if(v[i]*v[j]<=r1&&v[i]*v[j]>=r2)
+        {
+            cout<<v[i]<<","<<v[j]<<"\n";
+        }
+       }
+    }
+	// your code goes here
+	return 0;
+}
