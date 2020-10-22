@@ -1,32 +1,34 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int solve()
-{
-	int n;
-	cin>>n;
-	int x,maxi=INT_MIN;
-	unordered_map<int,vector<int>> m;
-	vector<int> v(n);
-	for(int i=0;i<n;i++)
-	{
-		cin>>v[i];
-		maxi=max(maxi,v[i]);
-		m[v[i]].push_back(i);
-	}
+typedef long long ll;
 
-	for(auto it:m[maxi])
-	{
-		if((it-1>=0 && v[it]>v[it-1])||(it+1<n && v[it]>v[it+1]))
-			return it+1;
-	}
-
-	return -1;
-
-}
-int main()
+int main() 
 {
 	int t;
-	cin>>t;
-	while(t--)
-		cout<<solve()<<endl;
+	cin >> t;
+	while (t--)
+	 {
+		int n;
+		cin >> n;
+		vector<int> a(n);
+		int mx = 0;
+		for (auto &it : a) {
+			cin >> it;
+			mx = max(mx, it);
+		}
+		
+		int idx = -1;
+		for (int i = 0; i < n; ++i) 
+		{
+			if (a[i] != mx) 
+			 continue;
+			if (i > 0 && a[i - 1] != mx)
+			  idx = i+1;
+			if (i < n - 1 && a[i + 1] != mx)
+			  idx = i+1;
+		}
+		cout << idx << endl;
+	}
+	
+	return 0;
 }
