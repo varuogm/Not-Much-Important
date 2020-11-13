@@ -1,0 +1,25 @@
+table of content
+1) using memset
+
+
+--------------------------
+#include <bits/stdc++.h>
+using namespace std;
+int main ()
+ {
+   char str[50];
+
+   strcpy(str,"hello i love you");
+   puts(str);
+
+   memset(str,'g',8);
+   puts(str);
+   
+   return(0);
+}
+------------
+output
+
+hello i love you
+gggggggglove you
+----------------

@@ -1,0 +1,38 @@
+//mycode
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+        
+        int caps=0;
+        int n= word.length();
+        for(int i=0;i<n;i++)
+        {
+          if(word[i]<='Z' && word[i]>='A')
+            caps++;
+        }
+      if(caps==n)//agar sab capital hue
+           return true;
+        else if(caps==0)//koi bhi capital naho
+            return true;
+        else if(n==1)//agar word length 1 hoto sab chalega
+            return true;
+        else if(caps==1 &&(isupper(word[0])))// ek hi captital ho and vo bhi word ka first letter
+           return true;
+        else
+          return false; 
+    }
+};
+----------------------------xxxx-----------------------
+//discuss ka
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+        int caps = 0;
+        for(auto it : word){
+            if(it >='A' && it <= 'Z')  caps++;
+        }
+        if(caps == word.size() || caps == 0)  return true;
+        else if((caps == 1) && (isupper(word[0]))) return true;
+        else return false;
+    }
+};

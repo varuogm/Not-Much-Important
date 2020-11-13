@@ -1,0 +1,59 @@
+**** HACKERRANK MAPPING QUESTION ******
+1) 1 to 9 then even odd
+2)matching sticks
+
+
+--------------------------------------------------
+Input-
+8
+11
+
+Output
+eight
+nine
+even
+odd
+
+int main()
+ {
+    int a, b;
+    cin >> a;
+    cin >> b;
+    string num[9] = {"one", "two", "three", "four", "five", "six", "seven","eight", "nine"};
+    
+    for(int i=a; i<=b;i++)
+    {
+        if(i<=9)
+            cout << num[i-1] << endl;
+        else
+            if(i%2==0)
+                cout << "even\n";
+            else
+                cout << "odd\n";
+    }
+    return 0;
+}
+
+-----------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+while(t--)
+{
+int a,b,sum=0;
+cin>>a>>b;
+int c= a+b;
+int map[10]={6,2,5,5,4,5,6,3,7,6};
+while(c!=0)
+   {
+    int temp=c%10;
+    sum = map[temp]+sum;
+    c=c/10;
+   }
+cout<<sum<<endl;	
+}	
+return 0;	
+ }

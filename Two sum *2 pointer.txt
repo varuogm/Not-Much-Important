@@ -1,0 +1,37 @@
+//finding two sum(LC) by two pointers
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+	 ll n,k;
+	 cin>>n>>k;
+	 ll arr[n];
+	 for(ll p=0;p<n;p++)
+	 {
+	 	cin>>arr[p];
+	 }
+	 sort(arr,arr+n);
+    ll i = 0; 
+    ll j = n-1; 
+    while (i < j) 
+	{ 
+        // If we find a pair 
+        if (arr[i] + arr[j] == k) 
+            {
+            	cout<<"yes the numbers are"<<arr[i] <<"  "<<arr[j];
+            	return 0;
+			} 
+        // If sum of elements at current pointers is less, we move towards 
+        // higher values by doing i++ 
+        else if (arr[i] + arr[j] < k) 
+            i++; 
+        // If sum of elements at current pointers is more, we move towards 
+        // lower values by doing j-- 
+        else
+            j--; 
+    } 
+	 cout<<"no such number";	
+	 	
+}
