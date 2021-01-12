@@ -3,7 +3,7 @@ typedef long long ll;
 #define endl "\n"
 using namespace std;
 
-
+//hackerrank map
 void sol() {
   int n;
   cin>>n;
