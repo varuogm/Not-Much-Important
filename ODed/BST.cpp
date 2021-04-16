@@ -44,7 +44,21 @@ struct node *insert(struct node *node, int data)
   return node;
 }
 
-// Driver code
+struct node* search(struct node* root, int data)
+{
+    // Base Cases: root is null or data is present at root
+    if (root == NULL || root->data == data)
+       return root;
+    
+    // data is greater than root's data
+    if (root->data < data)
+       return search(root->right, data);
+ 
+    // data is smaller than root's data
+    return search(root->left, data);
+}
+
+
 int main() {
 
   struct node *root = NULL;
@@ -64,7 +78,18 @@ int main() {
   root = insert(root, 14);
   root = insert(root, 4);
 
-  cout << "Inorder traversal: ";
+  cout << "Inorder traversal: \n";
 
   inorder(root);
+
+//search key in bst
+  int dhundho=10;
+  if(search(root,dhundho))
+     cout<<"\nYES";
+  else
+     cout<<"\nNO";
 }
+/*
+8
+8 3 1 6 7 10 14 4
+*/
