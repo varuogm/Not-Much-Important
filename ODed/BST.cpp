@@ -23,7 +23,7 @@ void inorder(struct node *root)
   if(root!=NULL) { 
  
     inorder(root->left);
-     cout << root->data << " -> ";
+    cout << root->data << " -> ";
     inorder(root->right);
   }
 }
@@ -58,6 +58,13 @@ struct node* search(struct node* root, int data)
     return search(root->left, data);
 }
 
+int height(node* root)
+{
+if(root == NULL)
+  return 0;
+return 1 + max(height(root->left), height(root->right));
+}
+
 
 int main() {
 
@@ -81,7 +88,7 @@ int main() {
   cout << "Inorder traversal: \n";
 
   inorder(root);
-
+cout<<height(root);
 //search key in bst
   int dhundho=10;
   if(search(root,dhundho))
