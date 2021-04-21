@@ -20,8 +20,7 @@ void insertAtTail(node * &head , int val) {
 
   node* n =new node(val); //isko add karna he 
 
-  if(head==NULL)
-  {
+  if(head==NULL){
     head = n;
     return;
   }
@@ -45,12 +44,49 @@ void display(node* head) {
   }
 }
 
+void deleteAtHead(node* &head){
+  node* todelete= head;//head ko defernce kardia todelte bolke
+  head= head->next;
+
+delete todelete;
+}
+
+void deletion(node* &head ,int val){
+
+if(head==NULL) //agar khali ho 
+  return;
+
+if(head->next==NULL){//agar ek hi ho
+  deleteAtHead(head);
+  return;
+}
+
+  node* temp=head;
+  while(temp->next->data!=val)
+    {
+      temp=temp->next;
+    }
+
+  node * todelete = temp->next;
+  temp->next = temp->next->next;
+
+  delete todelete;
+
+}
+
+
 
 int main() {
+
 node * head=NULL;
+
 insertAtTail(head,1);
 insertAtTail(head,2);
 insertAtTail(head,3);
 insertAtTail(head,4);
+
+deleteAtHead(head);
+deletion(head,3);
+
 display(head);
 }
