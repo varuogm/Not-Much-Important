@@ -69,10 +69,25 @@ if(head->next==NULL){//agar ek hi ho
 
   node * todelete = temp->next;
   temp->next = temp->next->next;
-
   delete todelete;
 
 }
+
+node* reverse(node* &head){
+   node* prevptr =NULL;
+   node* currptr = head;
+   node* nextptr;
+
+   while(currptr != NULL){
+
+    nextptr = currptr->next;
+    currptr->next=prevptr;
+
+    prevptr=currptr;
+    currptr=nextptr;
+   }
+return prevptr;
+ }
 
 
 
@@ -85,8 +100,10 @@ insertAtTail(head,2);
 insertAtTail(head,3);
 insertAtTail(head,4);
 
-deleteAtHead(head);
-deletion(head,3);
+//deleteAtHead(head);
+//deletion(head,3);
+node* newhead = reverse(head);
 
-display(head);
+display(newhead);
+
 }
