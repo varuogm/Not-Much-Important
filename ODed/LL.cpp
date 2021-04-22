@@ -90,6 +90,42 @@ return prevptr;
  }
 
 
+void makeCycle(node* &head , int pos){
+
+  node* temp=head;
+  node* startNode;
+
+  int cnt=1;
+  while(temp->next!=NULL)
+  {
+          if(cnt==pos){
+            startNode=temp;
+          }
+
+    temp=temp->next;
+    cnt++;
+  }
+temp->next= startNode;
+}
+
+
+bool detectCycle(node* &head){
+
+  node* slow=head;
+  node* fast= head;
+
+  while(fast!=NULL && fast->next!=NULL){
+    slow=slow->next;
+    fast=fast->next->next;
+
+    if(fast==slow){
+      return true;
+    }
+  }
+  return false;
+ }
+
+
 
 int main() {
 
@@ -99,11 +135,12 @@ insertAtTail(head,1);
 insertAtTail(head,2);
 insertAtTail(head,3);
 insertAtTail(head,4);
-
+makeCycle(head,3);
+cout<<detectCycle(head)<<endl;
 //deleteAtHead(head);
 //deletion(head,3);
-node* newhead = reverse(head);
+//node* newhead = reverse(head);
 
-display(newhead);
+//display(newhead);
 
 }
