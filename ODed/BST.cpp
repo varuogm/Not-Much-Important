@@ -1,5 +1,6 @@
 // Binary Search Tree operations in C++
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct node {
@@ -28,6 +29,35 @@ void inorder(struct node *root)
   }
 }
 
+void printLevelOrder(node *root)
+{
+    // Base Case
+    if (root == NULL)  return;
+ 
+    // Create an empty queue for level order traversal
+    queue<node *> q;
+ 
+    // Enqueue Root and initialize height
+    q.push(root);
+ 
+    while (q.empty() == false)
+    {
+        // Print front of queue and remove it from queue
+        node *temp = q.front();
+
+
+        cout << temp->data << " ";
+        q.pop();
+ 
+        /* Enqueue left child */
+        if (temp->left != NULL)
+            q.push(temp->left);
+ -
+        /*Enqueue right child */
+        if (temp->right != NULL)
+            q.push(temp->right);
+    }
+}
 // Insert a node
 struct node *insert(struct node *node, int data) 
 {
@@ -87,14 +117,15 @@ int main() {
 
   cout << "Inorder traversal: \n";
 
-  inorder(root);
-cout<<height(root);
+  printLevelOrder(root);
+
+//cout<<height(root);
 //search key in bst
-  int dhundho=10;
+ /* int dhundho=10;
   if(search(root,dhundho))
      cout<<"\nYES";
   else
-     cout<<"\nNO";
+     cout<<"\nNO";*/
 }
 /*
 8
