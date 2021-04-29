@@ -89,6 +89,27 @@ struct node *insert(struct node *node, int data)
   return node;
 }
 
+bool isbalanced(node *root)
+{
+if(root==NULL)
+  return true;
+
+
+if( isbalanced(root->left) == false )
+   return false;
+if( isbalanced(root->right) == false )
+   return false;
+
+int lh= height(root->left);
+int rh = height(root-> right);
+
+if(abs(lh-rh)<=1)
+  return true;
+else
+  return false;
+}
+
+
 struct node* search(struct node* root, int data)
 {
     // Base Cases: root is null or data is present at root
