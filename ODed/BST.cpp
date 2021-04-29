@@ -44,6 +44,32 @@ if (root == NULL )
  }
 
 }
+
+void rightview(node *root)
+{
+  if (root == NULL)  return;
+  queue<node *> q;
+ 
+  q.push(root);
+  while (!q.empty()){
+    int n= q.size();
+
+  for(int  i=0;i<n;i++) {
+
+    node *temp = q.front();
+    q.pop();
+          
+    if(i==n-1) cout<<temp->data<<" ";
+     // toggele i=0 and n-1 for right and left
+    if(temp->left != NULL)  
+       q.push(temp->left);
+
+    if(temp->right != NULL)  
+       q.push(temp->right);
+    }
+  }
+}
+
 void printLevelOrder(node *root)
 {
     // Base Case
