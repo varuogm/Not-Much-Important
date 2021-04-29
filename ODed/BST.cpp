@@ -29,6 +29,21 @@ void inorder(struct node *root)
   }
 }
 
+void sumreplace(node * root){
+
+if (root == NULL )
+       return ;
+ sumreplace(root->left);
+ sumreplace(root->right);
+
+ if(root->left!= NULL){
+  root->data += root->left->data;
+ }
+  if(root->right!= NULL){
+  root->data += root->right->data;
+ }
+
+}
 void printLevelOrder(node *root)
 {
     // Base Case
