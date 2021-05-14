@@ -35,7 +35,6 @@ void seive(){
     }
   }
 }
-
 int main()
 {
 
