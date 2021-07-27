@@ -1,4 +1,17 @@
 // Binary Search Tree operations in C++
+/*
+gourav*IMP - allocating dynamically
+to allocate a similar array dynamically, the following code can be used:
+
+int *array = (int*)malloc(10 * sizeof(int));
+malloc returns a void pointer (void *) thus we cast it to out preferred one as well
+like
+```
+int *ptr, *ptr2;
+ptr = malloc(10 * sizeof(*ptr)); without a cast 
+ptr2 = (int *)malloc(10 * sizeof(*ptr));  with a cast 
+```
+*/
 #include <iostream>
 #include <queue>
 using namespace std;
